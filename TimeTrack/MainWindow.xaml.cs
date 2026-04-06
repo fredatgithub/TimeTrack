@@ -62,8 +62,9 @@ namespace TimeTrack
                 new Personnalite { Nom = "Tesla", Prenom = "Nikola", DateNaissance = new DateTime(1856, 7, 10), DateDeces = new DateTime(1943, 1, 7), Profession = "Ingénieur, Inventeur", Description = "Courant alternatif" },
                 new Personnalite { Nom = "Hawking", Prenom = "Stephen", DateNaissance = new DateTime(1942, 1, 8), DateDeces = new DateTime(2018, 3, 14), Profession = "Physicien théoricien", Description = "Trous noirs, cosmologie" },
                 new Personnalite { Nom = "Mozart", Prenom = "Wolfgang Amadeus", DateNaissance = new DateTime(1756, 1, 27), DateDeces = new DateTime(1791, 12, 5), Profession = "Compositeur", Description = "Génie musical classique" },
-                new Personnalite { Nom = "Hubbard", Prenom = "Lafayette Ronald", DateNaissance = new DateTime(1913, 3, 13), DateDeces = new DateTime(1986, 1, 1), Profession = "Humaniste", Description = "Humaniste" },
+                new Personnalite { Nom = "LRH", Prenom = "Lafayette Ronald", DateNaissance = new DateTime(1913, 3, 13), DateDeces = new DateTime(1986, 1, 1), Profession = "Humaniste", Description = "Humaniste" },
                 //new Personnalite { Nom = "Buddha", Prenom = "Siddhartha Gautama", DateNaissance = new DateTime(563, 4, 8), DateDeces = new DateTime(483, 1, 1), Profession = "Maitre spirituel", Description = "Fondateur religion" },
+                 new Personnalite { Nom = "Freud", Prenom = "Sigmund", DateNaissance = new DateTime(1813, 5, 6), DateDeces = new DateTime(1939, 9, 23), Profession = "Neurologue Autrichien", Description = "Fondateur de la psychanalyse" },
             };
         }
 
