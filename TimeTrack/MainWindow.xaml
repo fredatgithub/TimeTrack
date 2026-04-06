@@ -5,8 +5,54 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TimeTrack"
         mc:Ignorable="d"
-        Title="Time track of geniuses" Height="450" Width="800">
-    <Grid>
+        Title="Ligne du Temps des Personnalités" Height="600" Width="1000"
+        PreviewMouseWheel="Window_PreviewMouseWheel"
+        MouseDown="Window_MouseDown"
+        MouseMove="Window_MouseMove"
+        MouseUp="Window_MouseUp">
+    <Window.Resources>
+        <Style TargetType="Rectangle" x:Key="PersonMarker">
+            <Setter Property="Width" Value="4"/>
+            <Setter Property="Fill" Value="#2C3E50"/>
+            <Setter Property="Cursor" Value="Hand"/>
+        </Style>
         
+        <Style TargetType="Border" x:Key="PersonCard">
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="BorderBrush" Value="#3498DB"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Padding" Value="8"/>
+            <Setter Property="CornerRadius" Value="4"/>
+            <Setter Property="Effect">
+                <Setter.Value>
+                    <DropShadowEffect BlurRadius="3" Opacity="0.2" ShadowDepth="1"/>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    
+    <Grid x:Name="MainGrid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        
+        <!-- Barre d'informations -->
+        <Border Grid.Row="0" Background="#F8F9FA" BorderBrush="#DEE2E6" BorderThickness="0 0 0 1">
+            <StackPanel Orientation="Horizontal" Margin="10">
+                <TextBlock Text="Zoom: " VerticalAlignment="Center"/>
+                <TextBlock x:Name="ZoomLevelText" VerticalAlignment="Center" Margin="5 0 20 0" FontWeight="Bold"/>
+                <TextBlock Text="Position: " VerticalAlignment="Center"/>
+                <TextBlock x:Name="PositionText" VerticalAlignment="Center" Margin="5 0 0 0"/>
+                <Button Content="Réinitialiser" Click="ResetZoom_Click" Margin="20 0 0 0" Padding="10 3"/>
+            </StackPanel>
+        </Border>
+        
+        <!-- Canvas pour la timeline -->
+        <ScrollViewer Grid.Row="1" x:Name="TimelineScrollViewer" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+            <Canvas x:Name="TimelineCanvas" Background="#FAFBFC">
+                <!-- Les éléments de la timeline seront dessinés ici dynamiquement -->
+            </Canvas>
+        </ScrollViewer>
     </Grid>
 </Window>
